@@ -88,5 +88,5 @@ func (l *Listener) AcceptSPDY() (*spdy.Conn, error) {
 	if err != nil {
 		return nil, err
 	}
-	return spdy.NewConn(c), nil
+	return &spdy.Conn{Conn: c}, nil
 }
